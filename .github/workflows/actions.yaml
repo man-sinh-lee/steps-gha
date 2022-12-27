@@ -1,0 +1,19 @@
+name: steps-gha
+on: 
+  push:
+    branches: [ master ]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: my first step
+      env:
+        MY_VAR: Hello World. My name is
+        FIRST_NAME: Man
+        MIDDLE_NAME: Sinh
+        LAST_NAME: Lee
+      run: | 
+          echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME
+          echo "Operating System is: "
+          cat /etc/os-release
+    
